@@ -1,4 +1,4 @@
-name: Intel NUC
+name: Intel NUC (No KVM)
 
 on:
   pull_request:
@@ -39,6 +39,10 @@ jobs:
     with:
       machine: genericx86-64
       environment: balena-staging.com
+      deploy-ami: false
+      deploy-esr: false
+      deploy-s3: false
+      deploy-hostapp: false
       test_matrix: >
         {
           "test_suite": ["os","cloud","hup"],
